@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syntax Research</title>
+  <meta name="description" content="Syntax Capital, LLC — secure, invitation-only client site.">
+
+  <link rel="icon" href="assets/images/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Header: transparent bar over the hero -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <nav class="quick-links" aria-label="Quick links">
+        <ul>
+          <li class="client-portal">
+            <a href="https://syntaxresearch.portal.tamaracinc.com/Login.aspx?ReturnUrl=%2f" target="_blank" rel="noopener">Client Portal</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Login popup (hidden by default; open with #login in the URL) -->
+      <div id="login-pop" class="login-pop" role="dialog" aria-modal="false" aria-labelledby="login-title" hidden>
+        <div class="arrow-up" aria-hidden="true"></div>
+        <button type="button" class="close-login" aria-label="Close login">&times;</button>
+        <form class="login-form" action="#" method="post" novalidate>
+          <fieldset>
+            <legend id="login-title" class="sr-only">Existing Users Log In</legend>
+            <div class="row-wrap">
+              <label for="log">Username or Email</label>
+              <input id="log" name="log" type="text" autocomplete="username" required>
+            </div>
+            <div class="row-wrap">
+              <label for="pwd">Password</label>
+              <input id="pwd" name="pwd" type="password" autocomplete="current-password" required>
+            </div>
+            <p class="form-error" role="alert" hidden></p>
+            <div class="button-row">
+              <label class="remember"><input name="rememberme" type="checkbox" value="forever"> Remember Me</label>
+              <button type="submit" class="btn-login">Log In <span aria-hidden="true">&rsaquo;</span></button>
+            </div>
+            <div class="link-text">
+              New User?&nbsp;<a href="https://www.syntaxresearch.com/create-account/">Click here to register</a>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero: full-height photo background with centered content -->
+  <main id="content" class="hero">
+    <div class="hero-content">
+      <img class="logo reveal" src="assets/images/logo.png" width="1024" height="315" alt="Syntax Capital">
+
+      <div class="info reveal">
+        <p>SYNTAX CAPITAL, LLC IS A DELAWARE LIMITED LIABILITY COMPANY<br>
+          ESTABLISHED IN JANUARY 2018</p>
+
+        <p>USHA FUND, LP IS A DELAWARE LIMITED PARTNERSHIP<br>
+          ESTABLISHED IN JANUARY 2018</p>
+
+        <p>SYNTAX RESEARCH, INC IS A NEW YORK INCORPORATION<br>
+          ESTABLISHED IN 2002</p>
+
+        <p>This is a secure site. Access is by invitation only and requires a Username and Password.</p>
+
+        <p>CONTACT US</p>
+
+        <address>
+          Syntax Capital, LLC<br>
+          150 East Palmetto Park Road, Suite 800<br>
+          Boca Raton, Florida 33432
+        </address>
+
+        <a class="email" href="mailto:info@syntaxresearch.com">info@syntaxresearch.com</a>
+
+        <a class="crs" href="https://reports.adviserinfo.sec.gov/crs/crs_151948.pdf" target="_blank" rel="noopener">CRS FORM ADV PART III</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

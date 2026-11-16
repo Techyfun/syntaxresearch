@@ -1,0 +1,443 @@
+/* ==========================================================
+   Syntax Research — landing page
+   ========================================================== */
+
+:root {
+  --navy: #0c2459;
+  --teal: #3d788d;
+  --grey-bg: #f3f3f3;
+  --grey-border: #cccccc;
+  --white: #ffffff;
+  --font-body: "Didact Gothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-ui: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --content-width: 668px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.428571;
+  color: #333;
+  background: var(--white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  z-index: 100000;
+  padding: 10px 16px;
+  background: var(--white);
+  color: var(--navy);
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.skip-link:focus {
+  top: 8px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ----------------------------------------------------------
+   Header
+   ---------------------------------------------------------- */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  background: transparent;
+}
+
+.header-inner {
+  position: relative;
+}
+
+.quick-links ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quick-links li {
+  line-height: 38px;
+}
+
+.quick-links li.client-portal {
+  background-color: var(--navy);
+  padding: 0 8px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.quick-links li.client-portal:hover {
+  background-color: #16357d;
+}
+
+.quick-links li a {
+  display: block;
+  color: var(--white);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.quick-links li a:hover,
+.quick-links li a:focus {
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------------
+   Login popup
+   ---------------------------------------------------------- */
+.login-pop {
+  position: absolute;
+  right: 15px;
+  top: 52px;
+  z-index: 1000;
+  width: 500px;
+  max-width: calc(100vw - 30px);
+  padding: 20px;
+  background: var(--grey-bg);
+  border: 1px solid var(--grey-border);
+  border-top: 3px solid var(--grey-border);
+  box-shadow: 0 8px 24px rgba(12, 36, 89, 0.15);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.login-pop.is-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.arrow-up {
+  position: absolute;
+  top: -15px;
+  right: 40px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 14px solid var(--grey-border);
+}
+
+.close-login {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: #777;
+  cursor: pointer;
+}
+
+.close-login:hover {
+  color: var(--navy);
+}
+
+.login-form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.login-form .row-wrap {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px 5px;
+  border: 1px solid var(--grey-border);
+  border-radius: 3px;
+  font: inherit;
+  color: #666;
+  background: var(--white);
+}
+
+.login-form input:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+
+.form-error {
+  margin: 0 0 8px;
+  color: #c0392b;
+  font-size: 13px;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.button-row .remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  text-transform: none;
+  color: #333;
+  font-weight: 400;
+}
+
+.btn-login {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--teal);
+  font-family: var(--font-ui);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.btn-login span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.btn-login:hover span {
+  transform: translateX(4px);
+}
+
+.link-text {
+  margin-top: 8px;
+  padding-right: 10px;
+  text-align: right;
+  font-size: 14px;
+}
+
+/* ----------------------------------------------------------
+   Hero
+   ---------------------------------------------------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 20px;
+  background-image: url("../images/login-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 20px auto;
+}
+
+.info {
+  margin: 20px 20px 100px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--navy);
+  text-align: center;
+  /* soft glow keeps navy text legible where it overlaps the darker sea */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.55), 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.info p {
+  margin: 0 0 10px;
+}
+
+.info address {
+  font-style: normal;
+  margin: 0;
+}
+
+.info a {
+  color: var(--navy);
+}
+
+.info .email {
+  display: block;
+  margin: 10px auto 2px;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.info .crs {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.info.reveal {
+  transition-delay: 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .login-pop {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* No JS: never hide content */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+
+/* Touch devices / iOS don't support fixed backgrounds well */
+@media (hover: none), (max-width: 1024px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .info {
+    font-size: 14px;
+    margin: 20px 0 100px;
+  }
+
+  .info .email {
+    font-size: 19px;
+  }
+
+  .logo {
+    width: 100%;
+    margin: 60px auto 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .quick-links li a {
+    font-size: 0.75em;
+  }
+
+  .quick-links li {
+    line-height: 32px;
+  }
+
+  .login-pop {
+    top: 44px;
+  }
+
+  .login-form .row-wrap {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .button-row,
+  .link-text {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    padding: 16px;
+  }
+
+  .info {
+    font-size: 13px;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
+  }
+}
